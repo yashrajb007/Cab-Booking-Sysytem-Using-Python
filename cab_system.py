@@ -196,7 +196,7 @@ bill_pdf()
 server=smtplib.SMTP('smtp.gmail.com',587)
 server.starttls()
 
-server.login(mail.email,mail.password)
+server.login('Sender Email Address','Password')
 #filename = f"{ride_no}.pdf"
 #attachment = open(f"E:\uber_project\{ride_no}.pdf", "r",encoding='UTF-8')
 
@@ -205,7 +205,7 @@ body=f'Hii{name}'
 msg=f"Hii {name}\nRide Bill {ride_no}\nDate {date}\nPassanger Name : {name}\nMobile No : {mobile}\nE-Mail : {email}\
     \nPick-Up Point : {pick_up}\nDroping Point :{drop}\nVehicle Type : {car}\nBase Fare : {base_fare}Rs\
     \nCGST 9% : {gst} Rs\nSGST 9% : {gst} Rs\nTotal Fare : {total_fare} Rs\nThanks For Riding With Us"
-server.sendmail('yashrajb007@gmail.com',email,msg)
+server.sendmail('Sender Email Address',email,msg)
 # server.sendmail(sender_email, receiver_email, message)
 print('Bill Sent Successfully !!')
 #
